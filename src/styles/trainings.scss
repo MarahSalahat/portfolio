@@ -1,0 +1,28 @@
+@use './colors' as *;
+
+.trainings-section {
+  margin-top: 10%;
+  padding: 2rem 2rem;
+  text-align: center;
+
+  .trainings-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: $text-color;
+    margin-bottom: 2rem;
+  }
+
+  .trainings-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.2rem;
+    justify-content: center;
+    max-width: 1200px;
+  }
+
+}
+
+.card{
+  filter: drop-shadow(0 0 8px $accent-blue) drop-shadow(0 0 16px $accent-blue);
+      transition: filter 0.3s ease-in-out;
+}

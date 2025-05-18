@@ -1,0 +1,76 @@
+@use './colors' as *;
+
+.card {
+  background: $bg-color;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+  }
+
+  .card-image {
+    width: 100%;
+    border-radius: 0.75rem;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    max-height: 200px;
+  }
+
+  .card-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: $primary-blue;
+    margin-bottom: 0.4rem;
+  }
+
+  .card-subtitle {
+    font-size: 1rem;
+    font-weight: 500;
+    color: $accent-blue;
+    margin-bottom: 0.75rem;
+  }
+
+  .card-description {
+    font-size: 0.95rem;
+    color: $text-color;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .card-footer {
+    font-size: 0.875rem;
+    color: $dark-gray;
+    margin-top: auto;
+  }
+
+  .card-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+
+    a {
+      font-size: 0.85rem;
+      padding: 0.4rem 0.75rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      background: lighten($primary-blue, 45%);
+      color: $primary-blue;
+      font-weight: 500;
+      transition: background 0.3s ease;
+
+      &:hover {
+        background: lighten($primary-blue, 35%);
+      }
+    }
+  }
+}

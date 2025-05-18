@@ -1,0 +1,23 @@
+@use './colors' as *;
+
+.experience-section {
+  margin-top: 10%;
+  text-align: center;
+  background: linear-gradient(45deg, $primary-blue, $accent-blue);
+  border-radius: 1rem;
+  width: 100%;
+
+  .section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #f9f8fa; 
+    margin-bottom: 2rem;
+  }
+
+  .experience-flex {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+
+  }
+}

@@ -1,0 +1,254 @@
+@use './colors' as *;
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 3rem 1rem;
+  flex-wrap: wrap;
+  animation: fadeIn 1s ease-in;
+  min-height: 380px;
+  width: 100%;
+  max-width: 1200px; 
+  margin: 0 auto; 
+
+  .hero-left {
+    flex: 0 0 25%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 380px; 
+  }
+
+  .hero-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    animation: slideInLeft 1s ease-out;
+
+    .image-wrapper {
+      position: relative;
+      width: 100%;
+      height: 380px;
+      border: 3px solid $primary-blue;
+      background-color: white;
+      border-radius: 50% 50% 0 0;
+      overflow: hidden;
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle, $accent-blue 0%, transparent 70%);
+        z-index: 0;
+      }
+    }
+
+    .me {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+      filter: drop-shadow(0 0 8px $accent-blue) drop-shadow(0 0 16px $accent-blue);
+      transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+
+      &:hover {
+        transform: scale(1.05) rotate(-1deg);
+        filter: drop-shadow(0 0 12px $accent-blue) drop-shadow(0 0 24px $accent-blue);
+      }
+    }
+  }
+
+  .hero-detail {
+    flex: 0 0 60%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 380px;
+    padding: 0 2rem; 
+
+    .animated-title {
+      font-size: 2.8rem;
+      font-weight: 800;
+      background: linear-gradient(270deg, $primary-blue, $accent-blue, $dark-gray, $light-gray, $primary-blue);
+      background-size: 800% 800%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientText 8s ease infinite;
+      margin-bottom: 2rem;
+    }
+
+    .description {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: $text-color;
+      max-width: 80%;
+    }
+  }
+
+  .contact-section {
+    flex: 0 0 auto; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   padding-left: 1rem;
+    border-radius:20px;
+    border: 3px solid $primary-blue;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    min-height: 30px; 
+    width: 95px; 
+    position: relative; 
+    right: 0; 
+
+    .contact-icons {
+      display: flex;
+      flex-direction: column;
+      filter: drop-shadow(0 0 8px $accent-blue) drop-shadow(0 0 16px $accent-blue);
+      gap: 1rem;
+      width: 100%;
+    }
+
+    .contact-item {
+      position: relative;
+      cursor: pointer;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      animation: fadeIn 0.5s ease-in forwards;
+
+      &:nth-child(1) { animation-delay: 0.6s; }
+      &:nth-child(2) { animation-delay: 0.7s; }
+      &:nth-child(3) { animation-delay: 0.8s; }
+      &:nth-child(4) { animation-delay: 0.9s; }
+
+      &:hover,
+      &:focus {
+        transform: scale(1.15);
+        background: rgba(255, 255, 255, 0.3);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        outline: none;
+      }
+
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+      }
+
+      .contact-icon {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+        filter: brightness(1.2);
+        transition: filter 0.3s ease;
+      }
+
+      .copied-feedback {
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-bottom: 8px;
+        padding: 6px 10px;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        font-size: 0.8rem;
+        font-weight: 600;
+        border-radius: 6px;
+        opacity: 0;
+        animation: fadeUp 2s forwards;
+        white-space: nowrap;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+      }
+
+      &:hover .contact-icon {
+        filter: brightness(1.5);
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-100px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes gradientText {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-left {
+    width: 100%;
+    flex: 0 0 100%;
+  }
+
+  .hero-image {
+    width: 100%;
+  }
+
+  .image-wrapper {
+    width: 60%;
+    height: auto;
+    padding-top: 60%;
+    margin: 0 auto;
+  }
+
+  .hero-detail {
+    width: 100%;
+    flex: 0 0 100%;
+    text-align: center;
+  }
+
+  .contact-section {
+    width: 100%;
+    flex: 0 0 100%;
+    min-height: auto;
+    .contact-icons {
+      flex-direction: row;
+      justify-content: center;
+      width: auto;
+    }
+  }
+}

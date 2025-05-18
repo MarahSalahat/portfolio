@@ -1,0 +1,72 @@
+@use './colors' as *;
+
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: $primary-blue;
+  
+  color: $light-gray;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(137, 133, 197, 0.1);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  nav {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    padding: 0;
+    margin: 0;
+
+    li {
+      a {
+        font-size: 1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: $light-gray;
+        padding: 0.5rem 0;
+        border-bottom: 2px solid transparent;
+        transition: all 0.3s ease;
+
+        &:hover,
+        &:focus {
+          color: $accent-blue;
+          border-color: $accent-blue;
+        }
+      }
+    }
+  }
+}
+
+// Responsive styles
+@media (max-width: 768px) {
+  .top-bar {
+    padding: 1.5rem;
+
+    nav {
+      justify-content: center;
+    }
+
+    ul {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+
+      li a {
+        font-size: 0.95rem;
+      }
+    }
+  }
+}

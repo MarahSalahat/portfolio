@@ -1,0 +1,24 @@
+
+@use "sass:color";
+@use './colors' as *;
+
+footer {
+  margin-top: 10%;
+  color: $text-color;             
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 -4px 10px rgba(44, 44, 84, 0.3);
+
+  p {
+    margin: 0;
+    user-select: none;
+  }
+  
+  
+  @media (max-width: 480px) {
+    font-size: 0.875rem;
+    padding: 1rem 0.5rem;
+  }
+}
