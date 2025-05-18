@@ -1,5 +1,4 @@
 
-import React from "react";
 import { training } from "../data/trainings";  
 import TrainingCard from "./ui/TrainingCard";
 import '../styles/trainings.scss';

@@ -1,4 +1,4 @@
-// experience.ts (data file)
+
 export interface Experience {
   title: string;
   company: string;

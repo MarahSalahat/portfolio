@@ -1,5 +1,5 @@
 import React from "react";
-import { training, type Training } from "../../data/trainings"; 
+import { type Training } from "../../data/trainings"; 
 
 interface TrainingProps {
   training: Training;

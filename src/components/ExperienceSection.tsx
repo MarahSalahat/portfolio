@@ -1,5 +1,5 @@
 
-import React from "react";
+
 import { experience } from "../data/experience";  
 import ExperienceCard from "./ui/ExperienceCard";
 import '../styles/experience.scss';

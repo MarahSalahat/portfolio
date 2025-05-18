@@ -5,7 +5,6 @@ import Experience from './components/ExperienceSection';
 import Training from './components/TrainingSection';
 import ProjectSection from "./components/ProjectSection";
 import Certificates from './components/Certificates';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
 import './App.css';
 import './styles/card.scss';

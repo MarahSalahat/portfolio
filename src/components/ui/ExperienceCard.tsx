@@ -1,5 +1,5 @@
 import React from "react";
-import { experience, type Experience } from "../../data/experience"; 
+import {type Experience } from "../../data/experience"; 
 
 interface ExperienceProps {
   experience: Experience;
